@@ -128,7 +128,7 @@ def create_user(cursor, username: str, password: str) -> None:
                 "  END IF; "
                 "END "
                 "$$; "
-            ).format(username=sql.Identifier(username), password=sql.Identifier(password), user=sql.Identifier(username))
+            ).format(username=sql.Literal(username), password=sql.Literal(password), user=sql.Literal(username))
         )
         print(f"DEBUG: SQL executed successfully")
 
